@@ -1,16 +1,10 @@
 # architecture_template
 
-A new Flutter project.
+--> Bu repository Flutter ile proje geliştirmede sağlam bir MVVM mimarisi için örnek klasörleme ve geliştirme ortamı sağlayacak projedir.
 
-## Getting Started
+--> Module klasörü altında bulunan klasörlerde submodule package`lar ile projenin ana kısmındaki kodların ağırlığı azaltılabilecek ve modülerlik sağlanacak.
+    --> Core package içerisine her projede kullanılabilecek ortak business logicler eklenecek. İlgili logicler için testlerde o klasörlerde yer alacak.
 
-This project is a starting point for a Flutter application.
+    --> UI widget package içerisine her projede ve proje içindeki her sayfada kullanılabilecek atomik widgetlar kodlanacak. Bu sayede onlara özel testlerde o klasörde yer alacak. 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
