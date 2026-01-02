@@ -1,10 +1,29 @@
+📚 [English](English_Readme.md) | [Architecture](ARCHITECTURE.md) |
 # architecture_template
 
---> Bu repository Flutter ile proje geliştirmede sağlam bir MVVM mimarisi için örnek klasörleme ve geliştirme ortamı sağlayacak projedir.
+> **This repository** provides a sample folder structure and development environment for a solid **MVVM architecture** in Flutter projects.
 
---> Module klasörü altında bulunan klasörlerde submodule package`lar ile projenin ana kısmındaki kodların ağırlığı azaltılabilecek ve modülerlik sağlanacak.
-    --> Core package içerisine her projede kullanılabilecek ortak business logicler eklenecek. İlgili logicler için testlerde o klasörlerde yer alacak.
+---
 
-    --> UI widget package içerisine her projede ve proje içindeki her sayfada kullanılabilecek atomik widgetlar kodlanacak. Bu sayede onlara özel testlerde o klasörde yer alacak. 
+## 📦 Module Folder
 
+The folders under the **Module** directory will contain **submodule packages** to reduce the load on the main project code and provide **modularity**.
 
+### 🔧 Core Package
+- Common **business logic** that can be used in any project will be added
+- **Tests** for the related logic will be located in this folder
+
+### 🎨 UI Widget Package
+- **Atomic widgets** that can be used in any project and on any page within the project will be coded
+- Widget-specific **tests** will be located in this folder
+
+---
+
+## 🎯 Feature Folder
+
+### Folder Structure
+- Contains `view` and `viewmodel` folders following the **MVVM architecture**
+- **Models** will be added to the `model` folder inside the `product` folder
+
+### 🔄 Mixin Usage
+- Methods and properties within each **widget** and **class** can be extracted into **mixins** for better distribution
