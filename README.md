@@ -1,29 +1,29 @@
 📚 [English](English_Readme.md) | [Architecture](ARCHITECTURE.md) |
 # architecture_template
 
-> **This repository** provides a sample folder structure and development environment for a solid **MVVM architecture** in Flutter projects.
+> **Bu repository**, Flutter ile proje geliştirmede sağlam bir **MVVM mimarisi** için örnek klasörleme ve geliştirme ortamı sağlayacak projedir.
 
 ---
 
-## 📦 Module Folder
+## 📦 Module Klasörü
 
-The folders under the **Module** directory will contain **submodule packages** to reduce the load on the main project code and provide **modularity**.
+**Module** klasörü altında bulunan klasörlerde **submodule package'lar** ile projenin ana kısmındaki kodların ağırlığı azaltılabilecek ve **modülerlik** sağlanacak.
 
 ### 🔧 Core Package
-- Common **business logic** that can be used in any project will be added
-- **Tests** for the related logic will be located in this folder
+- Her projede kullanılabilecek **ortak business logicler** eklenecek
+- İlgili logicler için **testler** bu klasörde yer alacak
 
 ### 🎨 UI Widget Package
-- **Atomic widgets** that can be used in any project and on any page within the project will be coded
-- Widget-specific **tests** will be located in this folder
+- Her projede ve proje içindeki her sayfada kullanılabilecek **atomik widget'lar** kodlanacak
+- Widget'lara özel **testler** bu klasörde yer alacak
 
 ---
 
-## 🎯 Feature Folder
+## 🎯 Feature Klasörü
 
-### Folder Structure
-- Contains `view` and `viewmodel` folders following the **MVVM architecture**
-- **Models** will be added to the `model` folder inside the `product` folder
+### Klasörleme Yapısı
+- **MVVM mimarisinin** `view` ve `viewmodel` klasörleri bulunmakta
+- **Modeller**, `product` klasörü içerisindeki `model` klasörüne eklenecek
 
-### 🔄 Mixin Usage
-- Methods and properties within each **widget** and **class** can be extracted into **mixins** for better distribution
+### 🔄 Mixin Kullanımı
+- Yazılacak her **widget** ve **class** içerisindeki metot ve özellikler dağıtabilmek adına **mixin** içerisine kaydırılabilecek
