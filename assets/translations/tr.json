@@ -1,0 +1,15 @@
+{
+  "app_title": "Mimari Şablon",
+  "home": {
+    "hello_world": "Merhaba Dünya",
+    "welcome_message": "Mimari şablon uygulamasına hoş geldiniz!"
+  },
+  "general": {
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "yes": "Evet",
+    "no": "Hayır",
+    "save": "Kaydet",
+    "delete": "Sil"
+  }
+}
