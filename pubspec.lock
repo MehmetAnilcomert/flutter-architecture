@@ -258,13 +258,29 @@ packages:
     source: hosted
     version: "3.0.8"
   easy_logger:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: easy_logger
       sha256: c764a6e024846f33405a2342caf91c62e357c24b02c04dbc712ef232bf30ffb7
       url: "https://pub.dev"
     source: hosted
     version: "0.0.2"
+  envied:
+    dependency: "direct main"
+    description:
+      name: envied
+      sha256: "4cfe31953c13977d1118b4f14cc5dfb683d8bb4c35d5b0c64b29d5b2e30712e8"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.2"
+  envied_generator:
+    dependency: "direct dev"
+    description:
+      name: envied_generator
+      sha256: "04467955af3b8f8a249b2f20686f00c89a979cb077aef7d0918642978b28bdeb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.3.2"
   equatable:
     dependency: "direct main"
     description:
@@ -438,7 +454,7 @@ packages:
     source: hosted
     version: "1.0.5"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
@@ -478,7 +494,7 @@ packages:
     source: hosted
     version: "3.0.2"
   logger:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: logger
       sha256: a7967e31b703831a893bbc3c3dd11db08126fe5f369b5c648a36f821979f5be3
@@ -677,6 +693,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.5.0"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   retry:
     dependency: transitive
     description:
@@ -778,6 +802,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  source_gen:
+    dependency: transitive
+    description:
+      name: source_gen
+      sha256: "07b277b67e0096c45196cbddddf2d8c6ffc49342e88bf31d460ce04605ddac75"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.1"
   source_span:
     dependency: transitive
     description:

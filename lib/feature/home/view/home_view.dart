@@ -1,3 +1,4 @@
+import 'package:architecture_template/product/init/config/prod_environment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/init/product_localization.dart';
 import 'package:architecture_template/product/utility/constants/enums/locales.dart';
@@ -31,6 +32,15 @@ class _HomeViewState extends State<HomeView> {
                 );
               },
               child: const Text('Change Language'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                ProductLocalization.updateLang(
+                  context: context,
+                  locale: Locales.en.locale,
+                );
+              },
+              child: Text(EnvironmentItems.baseUrl.value),
             ),
           ],
         ),
