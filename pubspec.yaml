@@ -13,19 +13,23 @@ dependencies:
   cupertino_icons: ^1.0.8
 
   # Core dependencies
-  kartal: ^4.2.0
-  vexana: ^5.0.3
   equatable: ^2.0.7
   easy_localization: ^3.0.8
+  kartal: ^4.2.0
+  vexana: ^5.0.3
+
+  # Utility
+  easy_logger: ^0.0.2
+  logger: ^2.6.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  very_good_analysis: ^10.0.0
   build_runner: ^2.10.4
   flutter_gen_runner: ^5.12.0
   flutter_launcher_icons: ^0.14.4
+  very_good_analysis: ^10.0.0
 
 #dependency_overrides:
 #  cupertino_icons: ^1.0.1   # Bu şekilde yapıldığında cupertino_icons paketinin versiyonu 1.0.1 olarak sabitlenir.
