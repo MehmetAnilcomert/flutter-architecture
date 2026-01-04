@@ -10,12 +10,10 @@ import 'package:logger/logger.dart';
 @immutable
 /// A class responsible for initializing product-level configurations before the app starts.
 final class ProductInitialize {
+  /// Starts the application by initializing necessary configurations.
   Future<void> startApplication() async {
     await runZoned<Future<void>>(() async {
       await _initialize();
-      (error, stack) {
-        Logger().e(error);
-      };
     });
   }
 
