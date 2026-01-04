@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:architecture_template/product/init/config/prod_environment.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:easy_logger/easy_logger.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ import 'package:logger/logger.dart';
 final class ProductInitialize {
   /// Starts the application by initializing necessary configurations.
   Future<void> startApplication() async {
+    WidgetsFlutterBinding.ensureInitialized();
     await runZoned<Future<void>>(() async {
       await _initialize();
     });
@@ -19,13 +21,14 @@ final class ProductInitialize {
 
   /// Initializes necessary configurations for the product.
   Future<void> _initialize() async {
-    WidgetsFlutterBinding.ensureInitialized();
     await EasyLocalization.ensureInitialized();
     EasyLocalization.logger.enableLevels = [LevelMessages.error];
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
     ]); // Sets the app to portrait mode only
     await DeviceUtility.instance.initPackageInfo();
+
+    ProductEnvironment.general();
 
     /// Global error handling
     /// Todo: Customize error handling as needed
