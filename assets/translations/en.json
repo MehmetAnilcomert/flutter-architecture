@@ -1,5 +1,5 @@
 {
-  "app_title": "Architecture Template",
+  "app_title": "Architecture Template {}",
   "home": {
     "hello_world": "Hello World",
     "welcome_message": "Welcome to the architectural template app!"

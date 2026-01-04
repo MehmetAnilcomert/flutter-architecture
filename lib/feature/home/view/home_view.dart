@@ -22,7 +22,7 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(LocaleKeys.app_title).tr(),
+            const Text(LocaleKeys.app_title).tr(args: ['2026']),
             ElevatedButton(
               onPressed: () {
                 ProductLocalization.updateLang(
