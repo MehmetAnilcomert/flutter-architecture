@@ -3,6 +3,7 @@ import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/init/product_localization.dart';
 import 'package:architecture_template/product/state/theme/theme_cubit.dart';
 import 'package:architecture_template/product/utility/constants/enums/locales.dart';
+import 'package:architecture_template/product/widget/product_network_image.dart';
 import 'package:common/index.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,9 @@ class _HomeViewState extends State<HomeView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const LottieCachedNetworkImage(
+              imageUrl: 'https://picsum.photos/id/237/200/300',
+            ),
             Assets.icons.icLightning.image(
               package: 'common',
               height: 200,
