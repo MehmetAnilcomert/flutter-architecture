@@ -1,6 +1,4 @@
-import 'package:architecture_template/product/init/config/env_dev.dart';
-import 'package:architecture_template/product/init/config/env_prod.dart';
-import 'package:architecture_template/product/init/config/prod_configuration.dart';
+import 'package:common/index.dart';
 import 'package:flutter/foundation.dart';
 
 /// Application environment manager class.
