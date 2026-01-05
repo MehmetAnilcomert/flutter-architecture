@@ -8,6 +8,7 @@ final class ProductEnvironment {
     _configuration = configuration;
   }
 
+  /// Sets up the product configuration with kDebugMode automatically.
   ProductEnvironment.general() {
     _configuration = kDebugMode ? DevEnv() : ProdEnv();
   }

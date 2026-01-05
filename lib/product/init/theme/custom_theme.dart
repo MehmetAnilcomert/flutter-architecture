@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+/// Abstract class representing a custom theme for the application.
 abstract class CustomTheme {
+  /// Creates an instance of [CustomTheme] with the given [textTheme].
   const CustomTheme(this.textTheme);
+
+  /// The text theme used in the custom theme.
   final TextTheme textTheme;
 
+  /// Generates a [ThemeData] based on the provided [colorScheme].
   ThemeData theme(ColorScheme colorScheme) => ThemeData(
     useMaterial3: true,
     brightness: colorScheme.brightness,
@@ -16,9 +21,10 @@ abstract class CustomTheme {
     canvasColor: colorScheme.surface,
   );
 
-  List<ExtendedColor> get extendedColors => [];
+  // List<ExtendedColor> get extendedColors => [];
 }
 
+/* 
 class ExtendedColor {
   const ExtendedColor({
     required this.seed,
@@ -53,3 +59,4 @@ class ColorFamily {
   final Color colorContainer;
   final Color onColorContainer;
 }
+ */

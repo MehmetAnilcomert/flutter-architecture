@@ -6,6 +6,7 @@ final class LightColorScheme extends CustomTheme {
   /// Creates a light color scheme.
   LightColorScheme(super.textTheme);
 
+  /// Returns the light color scheme used in the application.
   static ColorScheme lightScheme() {
     return const ColorScheme(
       brightness: Brightness.light,

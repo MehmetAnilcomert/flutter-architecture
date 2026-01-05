@@ -30,6 +30,9 @@ dependencies:
   bloc: ^9.2.0
   flutter_bloc: ^9.1.1
 
+  # Navigation
+  auto_route: ^11.1.0
+
   # Module dependencies
   common:
     path: module/common
@@ -41,10 +44,9 @@ dev_dependencies:
     sdk: flutter
 
   build_runner: ^2.10.4
-  flutter_gen_runner: ^5.12.0
   flutter_launcher_icons: ^0.14.4
   very_good_analysis: ^10.0.0
-  envied_generator: ^1.3.2
+  auto_route_generator: ^10.4.0
 
 #dependency_overrides:
 #  cupertino_icons: ^1.0.1   # Bu şekilde yapıldığında cupertino_icons paketinin versiyonu 1.0.1 olarak sabitlenir.

@@ -9,6 +9,7 @@ import 'package:kartal/kartal.dart';
 import 'package:logger/logger.dart';
 
 @immutable
+// ignore: lines_longer_than_80_chars
 /// A class responsible for initializing product-level configurations before the app starts.
 final class ProductInitialize {
   /// Starts the application by initializing necessary configurations.

@@ -1,9 +1,11 @@
 import 'package:architecture_template/product/init/config/prod_environment.dart';
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/init/product_localization.dart';
+import 'package:architecture_template/product/navigation/app_router.gr.dart';
 import 'package:architecture_template/product/state/theme/theme_cubit.dart';
 import 'package:architecture_template/product/utility/constants/enums/locales.dart';
 import 'package:architecture_template/product/widget/product_network_image.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:common/index.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ import 'package:kartal/kartal.dart';
 
 part 'widget/home_appbar.dart';
 
+@RoutePage()
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
 
@@ -61,13 +64,17 @@ class _HomeViewState extends State<HomeView> {
               child: Text(EnvironmentItems.baseUrl.value),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                await context.pushRoute(
+                  HomeDetailRoute(title: 'Home Detail Page'),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 textStyle: context.general.textTheme.bodyMedium,
                 backgroundColor: context.general.colorScheme.secondary,
               ),
               child: Text(
-                EnvironmentItems.apiKey.value,
+                'Go to Home Detail',
                 style: TextStyle(
                   color: context.general.colorScheme.onSecondary,
                 ),
