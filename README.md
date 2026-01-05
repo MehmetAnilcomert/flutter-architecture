@@ -1,4 +1,4 @@
-📚 [English](English_Readme.md) | [Architecture](ARCHITECTURE.md) |
+📚 [English](English_Readme.md) | [Module Yönetimi](code_gen_readme.md) |
 # architecture_template
 
 > **Bu repository**, Flutter ile proje geliştirmede sağlam bir **MVVM mimarisi** için örnek klasörleme ve geliştirme ortamı sağlayacak projedir.

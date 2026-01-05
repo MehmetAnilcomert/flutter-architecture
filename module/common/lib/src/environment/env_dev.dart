@@ -1,4 +1,4 @@
-import 'package:architecture_template/product/init/config/prod_configuration.dart';
+import 'package:common/src/environment/prod_configuration.dart';
 import 'package:envied/envied.dart';
 
 part 'env_dev.g.dart';
