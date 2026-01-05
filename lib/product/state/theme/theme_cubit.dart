@@ -6,6 +6,7 @@ part 'theme_state.dart';
 
 /// Cubit for managing theme state
 class ThemeCubit extends Cubit<ThemeState> {
+  /// Initialize ThemeCubit with optional [initialThemeMode]
   ThemeCubit({ThemeMode initialThemeMode = ThemeMode.dark})
     : super(ThemeState(themeMode: initialThemeMode));
 

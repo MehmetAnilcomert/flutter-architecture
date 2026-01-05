@@ -1,9 +1,12 @@
 import 'package:architecture_template/product/init/theme/custom_theme.dart';
 import 'package:flutter/material.dart';
 
+/// A class representing the dark color scheme for the application.
 final class DarkColorScheme extends CustomTheme {
+  /// Creates an instance of [DarkColorScheme] with the given [textTheme].
   DarkColorScheme(super.textTheme);
 
+  /// Returns the dark color scheme used in the application.
   static ColorScheme darkScheme() {
     return const ColorScheme(
       brightness: Brightness.dark,
@@ -55,6 +58,7 @@ final class DarkColorScheme extends CustomTheme {
     );
   }
 
+  /// Returns the ThemeData for the dark theme.
   ThemeData dark() {
     return theme(darkScheme());
   }
