@@ -26,6 +26,10 @@ dependencies:
   easy_logger: ^0.0.2
   logger: ^2.6.2
 
+  # State Management
+  bloc: ^9.2.0
+  flutter_bloc: ^9.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
