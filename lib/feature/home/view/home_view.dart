@@ -4,6 +4,7 @@ import 'package:architecture_template/product/init/product_localization.dart';
 import 'package:architecture_template/product/navigation/app_router.gr.dart';
 import 'package:architecture_template/product/state/theme/theme_cubit.dart';
 import 'package:architecture_template/product/utility/constants/enums/locales.dart';
+import 'package:architecture_template/product/utility/padding/product_padding.dart';
 import 'package:architecture_template/product/widget/product_network_image.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/index.dart';
@@ -54,29 +55,40 @@ class _HomeViewState extends State<HomeView> {
               },
               child: const Text('Change Language'),
             ),
-            ElevatedButton(
-              onPressed: () {
-                ProductLocalization.updateLang(
-                  context: context,
-                  locale: Locales.en.locale,
-                );
-              },
-              child: Text(EnvironmentItems.baseUrl.value),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                await context.pushRoute(
-                  HomeDetailRoute(title: 'Home Detail Page'),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                textStyle: context.general.textTheme.bodyMedium,
-                backgroundColor: context.general.colorScheme.secondary,
+            Padding(
+              padding:
+                  const ProductPadding.symmetricVerticalSmall(), // Projenin özel padding sınıfı kullanıldı
+              child: ElevatedButton(
+                onPressed: () {
+                  ProductLocalization.updateLang(
+                    context: context,
+                    locale: Locales.en.locale,
+                  );
+                },
+                child: Text(EnvironmentItems.baseUrl.value),
               ),
-              child: Text(
-                'Go to Home Detail',
-                style: TextStyle(
-                  color: context.general.colorScheme.onSecondary,
+            ),
+            Padding(
+              padding:
+                  const ProductPadding.onlyLeftNormal() +
+                  const EdgeInsets.only(
+                    left: 16,
+                  ), // Farklı paddinglerin kombinasyonu kullanıldı
+              child: ElevatedButton(
+                onPressed: () async {
+                  await context.pushRoute(
+                    HomeDetailRoute(title: 'Home Detail Page'),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  textStyle: context.general.textTheme.bodyMedium,
+                  backgroundColor: context.general.colorScheme.secondary,
+                ),
+                child: Text(
+                  'Go to Home Detail',
+                  style: TextStyle(
+                    color: context.general.colorScheme.onSecondary,
+                  ),
                 ),
               ),
             ),
