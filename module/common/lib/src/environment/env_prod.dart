@@ -7,6 +7,7 @@ part 'env_prod.g.dart';
   obfuscate: true,
   path: 'assets/env/.prod.env',
 )
+/// Production environment configuration implementation.
 final class ProdEnv implements ProductConfiguration {
   @EnviedField(varName: 'BASE_URL')
   final String _baseUrl = _ProdEnv._baseUrl;
