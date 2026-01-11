@@ -1,11 +1,13 @@
+import 'package:architecture_template/feature/home/view/mixin/home_view_mixin.dart';
 import 'package:architecture_template/feature/home/view_model/home_view_model.dart';
 import 'package:architecture_template/feature/home/view_model/state/home_state.dart';
 import 'package:architecture_template/product/init/config/prod_environment.dart';
 import 'package:architecture_template/product/navigation/app_router.gr.dart';
-import 'package:architecture_template/product/state/theme/theme_cubit.dart';
+import 'package:architecture_template/product/state/base/base_state.dart';
 import 'package:architecture_template/product/utility/padding/product_padding.dart';
 import 'package:architecture_template/product/widget/product_network_image.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:common/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
@@ -20,8 +22,9 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends State<HomeView> {
+class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
   late final HomeViewModel _homeViewModel;
+  List<User> _users = [];
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -71,20 +74,41 @@ class _HomeViewState extends State<HomeView> {
               ),
               const SizedBox(height: 20),
               // Theme toggle button
-              BlocBuilder<ThemeCubit, ThemeState>(
-                builder: (context, state) {
-                  return ElevatedButton.icon(
-                    onPressed: () {
-                      context.read<ThemeCubit>().toggleTheme();
-                    },
-                    icon: Icon(
-                      state.themeMode == ThemeMode.dark
-                          ? Icons.light_mode
-                          : Icons.dark_mode,
-                    ),
-                    label: const Text('Toggle Theme'),
+              ElevatedButton.icon(
+                onPressed: () {
+                  productViewModel.changeThemeMode(
+                    themeMode:
+                        productViewModel.state.themeMode == ThemeMode.dark
+                        ? ThemeMode.light
+                        : ThemeMode.dark,
                   );
                 },
+                icon: Icon(
+                  productViewModel.state.themeMode == ThemeMode.dark
+                      ? Icons.light_mode
+                      : Icons.dark_mode,
+                ),
+                label: const Text('Toggle Theme'),
+              ),
+              const SizedBox(height: 20),
+              // Display users
+              ElevatedButton(
+                onPressed: () async {
+                  _users = await loginService.fetchUsers();
+                },
+                child: const Text('Fetch Users'),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: _users.length,
+                  itemBuilder: (context, index) {
+                    final user = _users[index];
+                    return ListTile(
+                      title: Text(user.title ?? 'No Title'),
+                      subtitle: Text(user.body ?? 'No Body'),
+                    );
+                  },
+                ),
               ),
             ],
           ),
