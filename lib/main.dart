@@ -4,7 +4,7 @@ import 'package:architecture_template/product/init/state_initialize.dart';
 import 'package:architecture_template/product/init/theme/dark_theme/custom_dark_theme.dart';
 import 'package:architecture_template/product/init/theme/light_theme/custom_light_theme.dart';
 import 'package:architecture_template/product/navigation/app_router.dart';
-import 'package:architecture_template/product/state/theme/theme_cubit.dart';
+import 'package:architecture_template/product/state/viewmodel/product_viewmodel.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,10 +27,10 @@ class ArchitectureMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: _appRouter.config(),
-      title: 'Flutter Demo',
+      title: 'Flutter Architecture Template App',
       theme: CustomLightTheme().themeData,
       darkTheme: CustomDarkTheme().themeData,
-      themeMode: context.watch<ThemeCubit>().state.themeMode,
+      themeMode: context.watch<ProductViewmodel>().state.themeMode,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,

@@ -1,4 +1,5 @@
-import 'package:architecture_template/product/state/theme/theme_cubit.dart';
+import 'package:architecture_template/product/state/container/product_State_items.dart';
+import 'package:architecture_template/product/state/viewmodel/product_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,9 @@ class StateInitialize extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<ThemeCubit>(create: (context) => ThemeCubit()),
+        BlocProvider<ProductViewmodel>.value(
+          value: ProductStateItems.productViewModel,
+        ),
       ],
       child: child,
     );
