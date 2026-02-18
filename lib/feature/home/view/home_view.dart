@@ -4,6 +4,7 @@ import 'package:architecture_template/feature/home/view_model/state/home_state.d
 import 'package:architecture_template/product/init/config/prod_environment.dart';
 import 'package:architecture_template/product/navigation/app_router.gr.dart';
 import 'package:architecture_template/product/state/base/base_state.dart';
+import 'package:architecture_template/product/utility/logger/logger_mixin.dart';
 import 'package:architecture_template/product/utility/padding/product_padding.dart';
 import 'package:architecture_template/product/widget/product_network_image.dart';
 import 'package:auto_route/auto_route.dart';
@@ -22,9 +23,18 @@ class HomeView extends StatefulWidget {
   State<HomeView> createState() => _HomeViewState();
 }
 
-class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
+class _HomeViewState extends BaseState<HomeView>
+    with HomeViewMixin, LoggerMixin {
+
   late final HomeViewModel _homeViewModel;
   List<User> _users = [];
+
+  @override
+  void init() {
+    setupHome();
+  }
+  
+  
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -116,4 +126,10 @@ class _HomeViewState extends BaseState<HomeView> with HomeViewMixin {
       ),
     );
   }
+
+  @override
+  CustomLogModel get customLogModel => CustomLogModel('HomeView', 1);
+
+  @override
+  PageSpecialType get pageSpecialType => PageSpecialType.home;
 }

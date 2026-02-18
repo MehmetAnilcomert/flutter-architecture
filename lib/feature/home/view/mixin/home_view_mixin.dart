@@ -9,11 +9,8 @@ mixin HomeViewMixin on State<HomeView> {
   late final ProductNetworkErrorManager networkErrorManager;
   late final LoginService loginService;
 
-  // Home view widget lifecycle methods
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
+  /// Setup method to initialize home view dependencies
+  void setupHome() {
     loginService = LoginService(
       networkManager: ProductStateItems.networkManager,
     );
