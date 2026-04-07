@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 /// Extension on BuildContext to provide commonly used dimension values.
 extension ContextExtension on BuildContext {
@@ -10,4 +11,7 @@ extension ContextExtension on BuildContext {
 
   /// High value is 32.0
   double get highValue => 32;
+
+  /// Color scheme access modifier
+  ColorScheme get colors => general.colorScheme;
 }
