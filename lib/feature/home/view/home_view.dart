@@ -6,6 +6,10 @@ import 'package:architecture_template/product/navigation/app_router.gr.dart';
 import 'package:architecture_template/product/state/base/base_state.dart';
 import 'package:architecture_template/product/utility/logger/logger_mixin.dart';
 import 'package:architecture_template/product/utility/padding/product_padding.dart';
+import 'package:architecture_template/product/widget/custom_bottomsheet/abstract_custom_selection.dart' show CustomSelection;
+import 'package:architecture_template/product/widget/custom_bottomsheet/concrete_modal.dart' show ProductModal;
+import 'package:architecture_template/product/widget/custom_bottomsheet/custom_selection_widget.dart';
+import 'package:architecture_template/product/widget/custom_bottomsheet/product_model_factory.dart';
 import 'package:architecture_template/product/widget/product_network_image.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:common/index.dart';
@@ -13,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kartal/kartal.dart';
 
+part 'widget/custom_bottom_sheet_usage.dart';
 part 'widget/home_appbar.dart';
 
 @RoutePage()
@@ -25,7 +30,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends BaseState<HomeView>
     with HomeViewMixin, LoggerMixin {
-
   late final HomeViewModel _homeViewModel;
   List<User> _users = [];
 
@@ -33,8 +37,7 @@ class _HomeViewState extends BaseState<HomeView>
   void init() {
     setupHome();
   }
-  
-  
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -108,6 +111,8 @@ class _HomeViewState extends BaseState<HomeView>
                 },
                 child: const Text('Fetch Users'),
               ),
+              const SizedBox(height: 20),
+              _CustomBottomSheetUsage(homeViewModel: _homeViewModel),
               Expanded(
                 child: ListView.builder(
                   itemCount: _users.length,
